@@ -22,11 +22,11 @@ func main() {
 	resultPartOne := partOne(leftData, rightData)
 	fmt.Println("Answer Part One:", resultPartOne)
 
-	resultPartTwo := partTow(leftData, rightData)
+	resultPartTwo := partTwo(leftData, rightData)
 	fmt.Println("Answer Part Two:", resultPartTwo)
 }
 
-func partTow(leftData []int, rightData []int) int {
+func partTwo(leftData []int, rightData []int) int {
 	var totalSimilarityScore int
 	for _, value := range leftData {
 		occurrences := findOccurrences(rightData, value)
