@@ -4,24 +4,20 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
+	"slices"
 	"strconv"
 	"strings"
 )
 
 func main() {
-	// File name
-	filename := "input.txt"
-
-	// Call the function
-	leftData, rightData, err := readFileAndSplit(filename)
+	leftData, rightData, err := readFileAndSplit("input.txt")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
 	}
 
-	sort.Ints(leftData)
-	sort.Ints(rightData)
+	slices.Sort(leftData)
+	slices.Sort(rightData)
 
 	resultPartOne := partOne(leftData, rightData)
 	fmt.Println("Answer Part One:", resultPartOne)
